@@ -21,4 +21,13 @@ describe("CRUD flow - ui-todo", () => {
       "Buy GroceriesWrite TODO appSend masks to grandma"
     );
   });
+
+  it("should delete buy groceries", () => {
+    
+    cy.get("[data-cy=todo-task__button-delete]").eq(0).click()
+    cy.get("[data-cy=todo-task__name]").should(
+      "have.text",
+      "Write TODO appSend masks to grandma"
+    );
+  });
 });
